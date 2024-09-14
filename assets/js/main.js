@@ -62,35 +62,33 @@ sr.reveal(".skills__data, .work__img, .contact__input", { interval: 200 });
 
 //SEND EMAIL
 
-(function () {
-  emailjs.init("sZcKMRajLdcFAR5XR");
-})();
+document.addEventListener("DOMContentLoaded", function () {
+  emailjs.init("ABj1Tt-jxMdZ-WRN5-5");
 
-document
-  .getElementById("contact-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the default form submission
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the default form submission
 
-    // Get the form values
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
 
-    // Send the email
-    emailjs
-      .send("service_zfoxp5g", "template_bv9noxq", {
-        from_name: name,
-        reply_to: email,
-        message: message,
-      })
-      .then(
-        function (response) {
-          alert("Message sent successfully!");
-          console.log("SUCCESS!", response.status, response.text);
-        },
-        function (error) {
-          alert("Failed to send the message. Please try again later.");
-          console.log("FAILED...", error);
-        }
-      );
-  });
+      emailjs
+        .send("service_zfoxp5g", "template_bv9noxq", {
+          from_name: name,
+          reply_to: email,
+          message: message,
+        })
+        .then(
+          function (response) {
+            alert("Message sent successfully!");
+            console.log("SUCCESS!", response.status, response.text);
+          },
+          function (error) {
+            alert("Failed to send the message. Please try again later.");
+            console.log("FAILED...", error);
+          }
+        );
+    });
+});

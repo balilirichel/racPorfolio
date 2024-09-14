@@ -289,21 +289,32 @@ img {
   align-items: center;
   justify-content: center;
   background-color: #fff;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
   width: 100%;
   max-width: 250px;
+
+  /* Add this to make the content vertically and horizontally centered */
+  flex-direction: column;
+}
+
+.skills__names {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center text horizontally */
+  justify-content: center; /* Center text vertically */
 }
 
 .skills__icon {
-  font-size: 2rem;
+  font-size: 3rem; /* Increase icon size if needed */
   color: var(--first-color);
-  margin-right: 0.5rem;
+  margin-bottom: 0.5rem; /* Space between icon and name */
 }
 
 .skills__name {
   font-weight: 600;
+  font-size: 1.2rem;
 }
 
 /* ===== WORK =====*/
